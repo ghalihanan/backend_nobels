@@ -91,3 +91,7 @@ Route::post('projects', 'ProjectsController@addProcess');
 Route::get('projects/edit/{id}', 'ProjectsController@edit');
 Route::patch('projects/{id}', 'ProjectsController@editProcess');
 Route::get('/projects/delete/{id}','ProjectsController@delete');
+
+// Routes Connects
+Route::get('/connects','ConnectsController@index');
+Route::get('connects/detail/{id}','ConnectsController@detail');

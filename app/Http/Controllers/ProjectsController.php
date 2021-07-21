@@ -18,7 +18,10 @@ class ProjectsController extends Controller
         return view('projects.index', compact('projects'));
         
     }
-
+    public function indexApi(Request $request)
+    {
+        return Projects::all();
+    }
     public function cari(Request $request)
     {
         $cari = $request->cari;

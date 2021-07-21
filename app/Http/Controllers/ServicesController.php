@@ -19,7 +19,10 @@ class ServicesController extends Controller
         return view('services.index', compact('services'));
         
     }
-
+    public function indexApi(Request $request)
+    {
+        return Services::all();
+    }
     public function cari(Request $request)
     {
         $cari = $request->cari;

@@ -19,7 +19,10 @@ class TechsController extends Controller
         return view('techs.index', compact('techs'));
         
     }
-
+    public function indexApi(Request $request)
+    {
+        return Techs::all();
+    }
     public function cari(Request $request)
     {
         $cari = $request->cari;

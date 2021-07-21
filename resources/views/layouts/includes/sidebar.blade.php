@@ -16,7 +16,7 @@
 
                 <li><a href="/techs" class=""><i class="lnr lnr-code"></i> <span>Techs</span></a></li>
 
-                <li><a href="elements.html" class=""><i class="lnr lnr lnr-envelope"></i> <span>Connects</span></a></li>
+                <li><a href="/connects" class=""><i class="lnr lnr lnr-envelope"></i> <span>Connects</span></a></li>
 
                 {{-- <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
 

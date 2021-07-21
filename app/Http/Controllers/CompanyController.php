@@ -18,7 +18,10 @@ class CompanyController extends Controller
         return view('company.index', compact('company'));
         
     }
-
+    public function indexApi(Request $request)
+    {
+        return Company::all();
+    }
     public function cari(Request $request)
     {
         $cari = $request->cari;

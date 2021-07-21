@@ -19,7 +19,10 @@ class TeamsController extends Controller
         return view('teams.index', compact('teams'));
         
     }
-
+    public function indexApi(Request $request)
+    {
+        return Teams::all();
+    }
     public function cari(Request $request)
     {
         $cari = $request->cari;
