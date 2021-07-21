@@ -16,12 +16,12 @@
 
             <div class="row">
                 <div class="col-6">
-                    <h1> Data Techs</h1>
+                    <h1> Data Services</h1>
                 </div>
 
                 <div class="col-6">
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-                        Tambah Data Techs
+                        Tambah Data Services
                       </button>
                       
                       
@@ -30,21 +30,21 @@
                     <thead>
                         <th>No.</th>
                         <th>Title</th>
-                        <th>Images</th>
+                        <th>Deskripsi</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach ($techs as $item)
+                        @foreach ($services as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->title_techs}}</td>
-                                <td>{{ $item->image_techs}}</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->title_services}}</td>
+                                <td>{{ $item->desc_services}}</td>
                                 <td class="text-center">
-                                    <a href="{{ url('techs/edit/' .$item->id) }}" class="btn btn-warning btn-sm" role="button">
+                                    <a href="{{ url('services/edit/' .$item->id) }}" class="btn btn-warning btn-sm" role="button">
                                         Edit
                                     </a>
 
-                                    <form action="{{ url('techs/' .$item->id) }}" method="post" id="delete"  class="d-inline" onsubmit="return confirm('Are You Sure Delete Data?')">
+                                    <form action="{{ url('services/' .$item->id) }}" method="post" id="delete"  class="d-inline" onsubmit="return confirm('Are You Usere Delete Data?')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-sm">
@@ -71,7 +71,7 @@
                 <div class="modal-body">
                     {{-- <form>
                         <div class="form-group">
-                          <label for="title_techs">Title Techs</label>
+                          <label for="title_techs">Title services</label>
                           <input type="text" class="form-control" id="title_techs" aria-describedby="emailHelp" placeholder="Title Techs">
                           
                         </div>
@@ -85,16 +85,17 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form> --}}
-                      <form action="{{ url('techs') }}" method="post" enctype="multipart/form-data">
+                      <form action="{{ url('services') }}" method="post">
                         @csrf
                             <div class="form-group">
-                                <label>Title Techs</label>
+                                <label>Title services</label>
                                 <input type="text" name="title_techs" class="form-control" autofocus required>
                             </div>
     
                             <div class="form-group">
-                                <label>Image Techs</label>
-                                <input type="file" name="image_techs" class="form-control" required>
+                                <label>Deskripsi services</label>
+                                <textarea type="text" name="desc_services" class="form-control" cols="30" rows="10"></textarea>
+                                <!-- <input type="text" name="title_techs" class="form-control" autofocus required> -->
                             </div>
 
                               <button type="submit" class="btn btn-primary">Submit</button>
@@ -113,7 +114,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
     </body>
 </html>
-
-    

@@ -16,35 +16,39 @@
 
             <div class="row">
                 <div class="col-6">
-                    <h1> Data Techs</h1>
+                    <h1> Data Teams</h1>
                 </div>
 
                 <div class="col-6">
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-                        Tambah Data Techs
+                        Tambah Data Teams
                       </button>
                       
                       
                 </div>
                 <table class="table table-hover">
                     <thead>
-                        <th>No.</th>
-                        <th>Title</th>
-                        <th>Images</th>
-                        <th>Action</th>
+                    <th>No.</th>
+                    <th>Nama Teams</th>
+                    <th>Email Teams</th>
+                    <th>Position Teams</th>
+                    <th>Images Teams</th>
+                    <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach ($techs as $item)
+                        @foreach ($teams as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->title_techs}}</td>
-                                <td>{{ $item->image_techs}}</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->name_teams}}</td>
+                                <td>{{ $item->email_teams}}</td>
+                                <td>{{ $item->position_teams}}</td>
+                                <td>{{ $item->image_teams}}</td>
                                 <td class="text-center">
-                                    <a href="{{ url('techs/edit/' .$item->id) }}" class="btn btn-warning btn-sm" role="button">
+                                    <a href="{{ url('teams/edit/' .$item->id) }}" class="btn btn-warning btn-sm" role="button">
                                         Edit
                                     </a>
 
-                                    <form action="{{ url('techs/' .$item->id) }}" method="post" id="delete"  class="d-inline" onsubmit="return confirm('Are You Sure Delete Data?')">
+                                    <form action="{{ url('teams/' .$item->id) }}" method="post" id="delete"  class="d-inline" onsubmit="return confirm('Are You Sure Delete Data?')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-sm">
@@ -71,8 +75,8 @@
                 <div class="modal-body">
                     {{-- <form>
                         <div class="form-group">
-                          <label for="title_techs">Title Techs</label>
-                          <input type="text" class="form-control" id="title_techs" aria-describedby="emailHelp" placeholder="Title Techs">
+                          <label for="name_teams">Nama Teams</label>
+                          <input type="text" class="form-control" id="name_teams" aria-describedby="emailHelp" placeholder="Name Teams">
                           
                         </div>
                         <div class="form-group">
@@ -85,21 +89,33 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form> --}}
-                      <form action="{{ url('techs') }}" method="post" enctype="multipart/form-data">
+                      <form action="{{ url('teams') }}" method="post">
                         @csrf
-                            <div class="form-group">
-                                <label>Title Techs</label>
-                                <input type="text" name="title_techs" class="form-control" autofocus required>
-                            </div>
-    
-                            <div class="form-group">
-                                <label>Image Techs</label>
-                                <input type="file" name="image_techs" class="form-control" required>
-                            </div>
+                        
+                        <div class="form-group">
+                                    <label>Nama Teams</label>
+                                    <input type="text" name="name_teams" class="form-control" autofocus required>
+                                </div>
 
-                              <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="form-group">
+                                    <label>Email Teams</label>
+                                    <input type="text" name="email_teams" class="form-control" autofocus required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Position Teams</label>
+                                    <input type="text" name="position_teams" class="form-control" autofocus required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Image Teams</label>
+                                    <input type="file" name="image_teams" class="form-control" required>
+                                </div>
     
-                        </form>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                  {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+        
+                            </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -115,5 +131,3 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>
-
-    

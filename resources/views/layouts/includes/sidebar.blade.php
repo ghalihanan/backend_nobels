@@ -6,13 +6,13 @@
                 
                 <li><a href="/dashboard" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 
-                <li><a href="elements.html" class=""><i class="lnr lnr-cog"></i> <span>Services</span></a></li>
+                <li><a href="/services" class=""><i class="lnr lnr-cog"></i> <span>Services</span></a></li>
 
-                <li><a href="elements.html" class=""><i class="lnr lnr-apartment"></i> <span>Clients</span></a></li>
+                <li><a href="/company" class=""><i class="lnr lnr-apartment"></i> <span>Clients</span></a></li>
 
-                <li><a href="elements.html" class=""><i class="lnr lnr-laptop-phone"></i> <span>Portofolio</span></a></li>
+                <li><a href="/projects" class=""><i class="lnr lnr-laptop-phone"></i> <span>Portofolio</span></a></li>
 
-                <li><a href="elements.html" class=""><i class="lnr lnr lnr-users"></i> <span>Teams</span></a></li>
+                <li><a href="/teams" class=""><i class="lnr lnr lnr-users"></i> <span>Teams</span></a></li>
 
                 <li><a href="/techs" class=""><i class="lnr lnr-code"></i> <span>Techs</span></a></li>
 

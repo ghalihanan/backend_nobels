@@ -16,12 +16,12 @@
 
             <div class="row">
                 <div class="col-6">
-                    <h1> Data Techs</h1>
+                    <h1> Data Projects</h1>
                 </div>
 
                 <div class="col-6">
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-                        Tambah Data Techs
+                        Tambah Data Projects
                       </button>
                       
                       
@@ -29,22 +29,24 @@
                 <table class="table table-hover">
                     <thead>
                         <th>No.</th>
-                        <th>Title</th>
+                        <th>Title Projects</th>
+                        <th>Deskripsi</th>
                         <th>Images</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        @foreach ($techs as $item)
+                        @foreach ($projects as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->title_techs}}</td>
-                                <td>{{ $item->image_techs}}</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->title_projects}}</td>
+                                <td>{{ $item->desc_projects}}</td>
+                                <td>{{ $item->image_projects}}</td>
                                 <td class="text-center">
-                                    <a href="{{ url('techs/edit/' .$item->id) }}" class="btn btn-warning btn-sm" role="button">
+                                    <a href="{{ url('projects/edit/' .$item->id) }}" class="btn btn-warning btn-sm" role="button">
                                         Edit
                                     </a>
 
-                                    <form action="{{ url('techs/' .$item->id) }}" method="post" id="delete"  class="d-inline" onsubmit="return confirm('Are You Sure Delete Data?')">
+                                    <form action="{{ url('projects/' .$item->id) }}" method="post" id="delete"  class="d-inline" onsubmit="return confirm('Are You Usere Delete Data?')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-sm">
@@ -71,10 +73,11 @@
                 <div class="modal-body">
                     {{-- <form>
                         <div class="form-group">
-                          <label for="title_techs">Title Techs</label>
-                          <input type="text" class="form-control" id="title_techs" aria-describedby="emailHelp" placeholder="Title Techs">
+                          <label for="title_projects">Title Projects</label>
+                          <input type="text" class="form-control" id="title_projects" aria-describedby="emailHelp" placeholder="Title Projects">
                           
                         </div>
+                  
                         <div class="form-group">
                           <label for="exampleInputPassword1">Password</label>
                           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
@@ -85,16 +88,22 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form> --}}
-                      <form action="{{ url('techs') }}" method="post" enctype="multipart/form-data">
+                      <form action="{{ url('projects') }}" method="post">
                         @csrf
                             <div class="form-group">
-                                <label>Title Techs</label>
-                                <input type="text" name="title_techs" class="form-control" autofocus required>
+                                <label>Title Projects</label>
+                                <input type="text" name="title_projects" class="form-control" autofocus required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Deskripsi Projects</label>
+                                <textarea type="text" name="desc_projects" class="form-control" cols="30" rows="10"></textarea>
+                        
                             </div>
     
                             <div class="form-group">
-                                <label>Image Techs</label>
-                                <input type="file" name="image_techs" class="form-control" required>
+                                <label>Image Projects</label>
+                                <input type="file" name="image_projects" class="form-control" required>
                             </div>
 
                               <button type="submit" class="btn btn-primary">Submit</button>
@@ -113,7 +122,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
     </body>
 </html>
-
-    
