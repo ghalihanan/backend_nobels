@@ -23,11 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        DB::table('users')->insert([
-            ['name' => 'Developer', 'public' => true],
-            ['email' => 'admin-nobels@gmail.com', 'public' => true],
-            ['password' => 'admin', 'public' => true],
-        ]);
+        
     }
     
     
