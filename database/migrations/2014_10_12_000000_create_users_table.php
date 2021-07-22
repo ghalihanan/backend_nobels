@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             ['password' => 'admin', 'public' => true],
         ]);
     }
-    }
+    
     
 
     /**
